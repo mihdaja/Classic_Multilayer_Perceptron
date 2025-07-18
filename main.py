@@ -47,8 +47,8 @@ param_nr = sum(
 
 X = torch.rand((1,28*28)) #generates a random input matrix for the model to check it works
 
-out = model(X) # model(X) automatically calls forward(X)
-#print(out) # the grad_fn=<AddmmBackward0> calculates the last made calculation in order to use this information when it computes the differentiation for backpropagation
+#out = model(X) # model(X) automatically calls forward(X)
+#print(out) # the grad_fn=<AddmmBackward0> in this output calculates the last made calculation in order to use this information when it computes the differentiation for backpropagation
 
 #after training however, this is useless, so we would use something like this in order to save on processing power
 #with torch.no_grad():
@@ -56,6 +56,6 @@ out = model(X) # model(X) automatically calls forward(X)
 #print(out)
 
 #also, we don't use a softmax function on the loss, because the commonly used torch loss functions apply this function in the call, making it unnecessary in the training. If we want to use the model with softmax after training in order to produce predictions we'd use something like this:
-#with torch.no_grad():
-#   out = torch.softmax(model(X), dim = 1)
-#print(out)
+with torch.no_grad():
+   out = torch.softmax(model(X), dim = 1)
+print(out)
