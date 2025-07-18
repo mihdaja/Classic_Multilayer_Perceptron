@@ -1,0 +1,1 @@
+  Following chapter five of the book https://sebastianraschka.com/teaching/pytorch-1h/ I learned how to code a classic multilayer perceptron neural network. I also added comments motivating and explaining the choices made and functions built in this project.
